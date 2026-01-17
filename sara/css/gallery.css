@@ -1,0 +1,146 @@
+/* --- Lightbox Styles --- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Darker background for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it's on top of everything */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    /* Reasonable size */
+    max-height: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+    /* Use viewport height for max size */
+    border-radius: 8px;
+    /* Soft edges */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* Subtle shadow */
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active #lightbox-img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    line-height: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Optional: Add a smooth transition for the gallery items on click */
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ensure the gallery grid remains functional */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Basic styling for the filter buttons for a better look */
+.gallery-filter {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Define two shades of orange for styling */
+:root {
+    --orange-primary: #FF8C00;
+    /* Darker Orange for active state/hover background */
+    --orange-secondary: #FFA500;
+    /* Lighter Orange for border/text (or a subtle background) */
+}
+
+.filter-btn {
+    background: none;
+    border: 2px solid var(--orange-secondary);
+    color: var(--orange-primary);
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.1s;
+    font-weight: 600;
+    /* Slightly bolder */
+    border-radius: 25px;
+    /* Pill shape for modern look */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+    background-color: var(--orange-secondary);
+    color: #fff;
+    border-color: var(--orange-secondary);
+    transform: translateY(-1px);
+    /* Subtle lift on hover */
+}
+
+.filter-btn.active {
+    background-color: var(--orange-primary);
+    color: #fff;
+    border-color: var(--orange-primary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for active state */
+}

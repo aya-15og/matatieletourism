@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow common administrative and sensitive paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /search
+
+# Sitemap location
+Sitemap: https://matatiele.co.za/sitemap.xml

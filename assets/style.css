@@ -1,0 +1,711 @@
+:root {
+    --gold: #C59D5F;
+    --green: #2E6F3A;
+    --brown: #6B4C3B;
+    --max-width: 1200px;
+    --radius: 12px;
+    --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset & basic */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #fffef8, #f8f6f1);
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+    cursor: pointer;
+    /* indicate clickable for lightbox */
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header & navigation */
+header {
+    position: relative;
+    z-index: 10;
+}
+
+.top-bar {
+    background: var(--green);
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 30%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.brand-text {
+    color: #fff;
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.brand-title {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.brand-tagline {
+    font-size: 13px;
+    opacity: 0.95;
+    margin-top: 2px;
+}
+
+/* Navigation: force all items to fit in one line */
+nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+nav a {
+    background: var(--green);
+    box-shadow: 0 4px 12px rgba(46, 111, 58, 0.14);
+    padding: 6px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 40px;
+    max-width: 100px;
+    text-align: center;
+}
+
+nav a:hover {
+    background: linear-gradient(90deg, var(--gold), var(--green));
+    color: var(--brown);
+}
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/* Buttons & links */
+a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--green);
+    box-shadow: 0 4px 12px rgba(46, 111, 58, 0.14);
+    transition: background 0.22s, transform 0.22s;
+}
+
+a:hover {
+    background: linear-gradient(90deg, var(--gold), var(--green));
+    color: #0b200f;
+    transform: translateY(-2px);
+}
+
+a.btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    box-shadow: none;
+}
+
+a.btn-outline:hover {
+    background: #fff;
+    color: var(--green);
+    transform: translateY(-2px);
+}
+
+/* Hero slideshow */
+.hero-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    z-index: 2;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 24px 32px;
+    border-radius: 16px;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+/* Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.card {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: 0.28s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card .content {
+    padding: 12px;
+}
+
+.meta {
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.small {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+}
+
+/* Hero Split Layout */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px 24px;
+    min-height: clamp(280px, 45vh, 480px);
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #d4a865);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--brown);
+    font-weight: 700;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    height: 350px;
+}
+
+.image-wrapper img,
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
+/* About & At a Glance Section */
+.about-glance-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    max-width: var(--max-width);
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    color: var(--brown);
+    margin-bottom: 16px;
+}
+
+.about-content .lead {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.about-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.glance-cards h3 {
+    font-size: 24px;
+    color: var(--brown);
+    margin-bottom: 20px;
+}
+
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.glance-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+
+.glance-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.glance-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.glance-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Center button containers */
+.view-more,
+.section-buttons,
+.center-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.view-more a,
+.section-buttons a,
+.center-buttons a {
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-glance-section {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .glance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-split {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 40px 16px;
+    }
+
+    .hero-buttons {
+        flex-wrap: nowrap;
+    }
+
+    .hero-buttons .btn {
+        flex: 1 1 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brand-title {
+        font-size: 16px;
+    }
+
+    .brand-tagline {
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 4px 8px;
+        font-size: 12px;
+        min-width: 35px;
+        max-width: 90px;
+    }
+
+    .hero-container {
+        height: 320px;
+    }
+
+    .hero-text {
+        padding: 16px;
+    }
+
+    .hero-text h1 {
+        font-size: 20px;
+    }
+
+    .hero-text p {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .btn,
+    a {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .glance-grid {
+        gap: 12px;
+    }
+
+    .glance-card {
+        padding: 16px;
+    }
+
+    .image-wrapper {
+        height: 240px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+}
+
+@media (max-width: 360px) {
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 4px 6px;
+        font-size: 11px;
+        min-width: 30px;
+        max-width: 85px;
+    }
+}
+
+/* =====================
+   LIGHTBOX (full image popup)
+   ===================== */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    /* scroll if too tall */
+    z-index: 9999;
+    padding: 20px;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    background: #fff;
+    padding: 10px;
+}
+
+.lightbox-content img {
+    width: auto;
+    max-width: 100%;
+    max-height: 90vh;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+}
+
+.lightbox-overlay {
+    box-sizing: border-box;
+    display: none;
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    /* Stay in place */
+    z-index: 99999;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    /* Full viewport width */
+    height: 100vh;
+    /* Full viewport height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black w/ opacity */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.lightbox-content {
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    /* Centered */
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more responsive */
+    max-width: 700px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Remove extra space below image */
+}
+
+.lightbox-close {
+    color: #aaaaaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}

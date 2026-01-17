@@ -1,0 +1,264 @@
+/* --------------------------------------------------
+   STYLISH MEDICAL THEME — DR PM JADA
+   Palette inspired by uploaded business card
+----------------------------------------------------- */
+
+/* Brand Colours */
+:root {
+    --blue-light: #9ad4f4;
+    --blue-mid: #42a5e8;
+    --blue-deep: #0071bc;
+    --blue-dark: #003366;
+    --navy-text: #022b4d;
+
+    --bg: #ffffff;
+    --bg-soft: #f5f9fc;
+    --text: #222;
+    --muted: #666;
+
+    --radius: 12px;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-soft);
+    color: var(--text);
+    line-height: 1.55;
+}
+
+/* Containers */
+.container {
+    padding: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+/* -------------------- HEADER -------------------- */
+
+.site-header {
+    background: var(--bg);
+    border-bottom: 1px solid #e5e9ef;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    text-decoration: none;
+}
+
+.brand span {
+    color: var(--blue-dark);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.logo {
+    height: 42px;
+}
+
+/* NAVIGATION */
+.nav-toggle {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--blue-dark);
+    cursor: pointer;
+}
+
+.main-nav {
+    display: none;
+    flex-direction: column;
+    gap: .3rem;
+    padding: .5rem 0;
+}
+
+.main-nav.open {
+    display: flex;
+}
+
+.main-nav a {
+    padding: .6rem .8rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+.main-nav a:hover {
+    background: var(--blue-light);
+    color: #fff;
+}
+
+/* -------------------- HERO -------------------- */
+
+.hero {
+    padding: 2.8rem 1rem;
+    background: linear-gradient(90deg,
+            var(--blue-light),
+            var(--blue-mid),
+            var(--blue-deep));
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.hero h1 {
+    font-size: 1.9rem;
+    margin-bottom: .6rem;
+    font-weight: 700;
+}
+
+.hero .lead {
+    max-width: 600px;
+    margin: 0.5rem auto 1rem;
+    font-size: 1.05rem;
+    color: #eef8ff;
+}
+
+.cta-row {
+    display: flex;
+    gap: .7rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* -------------------- BUTTONS -------------------- */
+
+.btn {
+    padding: .7rem 1.2rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--blue-dark);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    opacity: .85;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* -------------------- SECTIONS -------------------- */
+
+section {
+    padding: 2.2rem 1rem;
+}
+
+/* Cards */
+.card {
+    background: var(--bg);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.3rem;
+    border-left: 6px solid var(--blue-mid);
+}
+
+/* Headings */
+h2 {
+    font-size: 1.6rem;
+    color: var(--blue-dark);
+    margin-bottom: 1rem;
+}
+
+/* Services */
+.service-list {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+}
+
+.service-list li {
+    margin-bottom: .5rem;
+    color: var(--navy-text);
+}
+
+/* Contact Form */
+.contact-form label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: .7rem;
+    border-radius: var(--radius);
+    border: 1px solid #ccd7e0;
+    background: #fff;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--blue-mid);
+}
+
+/* Notices */
+.notice {
+    background: var(--blue-light);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #003;
+}
+
+/* Footer */
+.site-footer {
+    padding: 1.5rem 0;
+    text-align: center;
+    background: var(--blue-dark);
+    color: #ccd8e9;
+    margin-top: 2rem;
+}
+
+/* -------------------- DESKTOP -------------------- */
+
+@media (min-width: 780px) {
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .service-list {
+        columns: 2;
+        column-gap: 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+}

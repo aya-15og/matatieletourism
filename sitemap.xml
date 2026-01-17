@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Pages -->
+    <url>
+        <loc>https://matatiele.co.za/</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/attractions</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/stay</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/things-to-do</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/dining</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/business-directory</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Example Attractions Sub-Pages -->
+    <url>
+        <loc>https://matatiele.co.za/attractions/4x4-trails</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/attractions/mountain-lake-reserve</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/attractions/mariazell-mission</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Example Accommodation Sub-Pages -->
+    <url>
+        <loc>https://matatiele.co.za/stay/maloti-guest-lodge</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/stay/sara-lee-bnb</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/stay/resthaven-guesthouse</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Example Things To Do Sub-Pages -->
+    <url>
+        <loc>https://matatiele.co.za/things-to-do/rock-art-exploration</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/things-to-do/food-festival</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/things-to-do/music-festival</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Example Business Directory Category Sub-Pages -->
+    <url>
+        <loc>https://matatiele.co.za/business-directory/restaurants</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/business-directory/shops</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://matatiele.co.za/business-directory/services</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
